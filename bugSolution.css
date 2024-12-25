@@ -1,0 +1,11 @@
+One approach to solve this issue is to avoid directly using the `calc()` function with percentages and pixels.  Instead, we can utilize JavaScript to dynamically calculate the width based on the parent's width:
+
+```javascript
+const container = document.querySelector('.container');
+const parentWidth = container.parentElement.offsetWidth;
+container.style.width = `${parentWidth * 0.5 - 10}px`;
+```
+
+This JavaScript code first gets the parent's width, then calculates the desired width based on 50% of the parent width minus 10 pixels, and finally sets the `.container` element's width.  This approach ensures accurate calculation regardless of browser inconsistencies with the CSS `calc()` function.
+
+Alternatively, consider using alternative layout techniques (grid or flexbox) that may be more robust and easier to manage for complex layouts.
